@@ -42,6 +42,15 @@ namespace DataAccessLayer.DAO
 			else { return _context.Units.FirstOrDefault(s => s.UnitId == id); 
 			}
 		}
+		public Unit GetByName(string name)
+		{
+			var unit = _context.Units.FirstOrDefault(u => u.UnitName == name);
+			if (unit == null)
+			{
+				return null;
+			}
+			return unit;
+		}
 
 		public void Add(Unit item)
 		{
@@ -58,13 +67,8 @@ namespace DataAccessLayer.DAO
 		public void Delete(int id)
 		{
 			var item = _context.Units.Find(id);
-			if (item != null && item.UnitName.Equals("(no unit)")) {
-				return;
-			}
-			if (item != null)
-			{
-				item.UnitName = "(no unit)";
-				_context.Units.Update(item);
+			if (item != null ) {
+				_context.Units.Remove(item);
 				_context.SaveChanges();
 			}
 		}

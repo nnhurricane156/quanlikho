@@ -11,6 +11,7 @@ namespace DataAccessLayer.Repository
 	{
 		IEnumerable<Unit> GetAllUnits();
 		Unit GetUnitById(int unitId);
+		Unit GetByName(string name);
 		void AddUnit(Unit unit);
 		void UpdateUnit(Unit unit);
 		void DeleteUnit(int unitId);
