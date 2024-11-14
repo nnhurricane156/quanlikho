@@ -1,13 +1,12 @@
-﻿C:\Users\ADMIN\Downloads\QuanLiKho\QuanLiKho\QuanLiKho\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
-FC:\Users\ADMIN\Downloads\QuanLiKho\QuanLiKho\QuanLiKho\App.xaml;;
-FC:\Users\ADMIN\Downloads\QuanLiKho\QuanLiKho\QuanLiKho\ControlBar\ControlBarUC.xaml;;
-FC:\Users\ADMIN\Downloads\QuanLiKho\QuanLiKho\QuanLiKho\CustomerWindow.xaml;;
-FC:\Users\ADMIN\Downloads\QuanLiKho\QuanLiKho\QuanLiKho\InputWindow.xaml;;
-FC:\Users\ADMIN\Downloads\QuanLiKho\QuanLiKho\QuanLiKho\LoginWindow.xaml;;
-FC:\Users\ADMIN\Downloads\QuanLiKho\QuanLiKho\QuanLiKho\MainWindow.xaml;;
-FC:\Users\ADMIN\Downloads\QuanLiKho\QuanLiKho\QuanLiKho\ObjectWindow.xaml;;
-FC:\Users\ADMIN\Downloads\QuanLiKho\QuanLiKho\QuanLiKho\OutWindow.xaml;;
-FC:\Users\ADMIN\Downloads\QuanLiKho\QuanLiKho\QuanLiKho\SuplierWindow.xaml;;
-FC:\Users\ADMIN\Downloads\QuanLiKho\QuanLiKho\QuanLiKho\UnitWindow.xaml;;
-FC:\Users\ADMIN\Downloads\QuanLiKho\QuanLiKho\QuanLiKho\UserWindow.xaml;;
+﻿
+FD:\quanlikho\QuanLiKho\App.xaml;;
+FD:\quanlikho\QuanLiKho\ControlBar\ControlBarUC.xaml;;
+FD:\quanlikho\QuanLiKho\CustomerWindow.xaml;;
+FD:\quanlikho\QuanLiKho\InputWindow.xaml;;
+FD:\quanlikho\QuanLiKho\LoginWindow.xaml;;
+FD:\quanlikho\QuanLiKho\MainWindow.xaml;;
+FD:\quanlikho\QuanLiKho\ObjectWindow.xaml;;
+FD:\quanlikho\QuanLiKho\OutWindow.xaml;;
+FD:\quanlikho\QuanLiKho\UnitWindow.xaml;;
+FD:\quanlikho\QuanLiKho\UserWindow.xaml;;
 

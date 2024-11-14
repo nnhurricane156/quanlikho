@@ -28,10 +28,10 @@
     <Compile Update="SuplierWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="UnitWindow.xaml.cs">
+    <Compile Update="SupplierForm.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="UserWindow.xaml.cs">
+    <Compile Update="UnitWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -60,10 +60,10 @@
     <Page Update="SuplierWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="UnitWindow.xaml">
+    <Page Update="SupplierForm.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="UserWindow.xaml">
+    <Page Update="UnitWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

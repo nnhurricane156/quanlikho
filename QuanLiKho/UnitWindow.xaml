@@ -4,66 +4,62 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QuanLiKho"
-        
-         xmlns:uc="clr-namespace:QuanLiKho.ControlBar"        
-         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-         TextElement.FontWeight="Regular"
-         TextElement.FontSize="13"
-         TextOptions.TextFormattingMode="Ideal"
-         TextOptions.TextRenderingMode="Auto"
-         Background="{DynamicResource MaterialDesignPaper}"
-         FontFamily="{DynamicResource MaterialDesignFont}"
-         ResizeMode="NoResize"
-         WindowStyle="None"
-         WindowStartupLocation="CenterScreen"
-        
-        mc:Ignorable="d"
-        Title="UnitWindow" Height="450" Width="352">
+        xmlns:uc="clr-namespace:QuanLiKho.ControlBar"        
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="UnitWindow" Height="450" Width="352" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid Margin="0,10,0,0">
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
+
         <Grid Grid.Row="0">
-            <uc:ControlBarUC></uc:ControlBarUC>
+            <uc:ControlBarUC />
         </Grid>
 
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="auto"></RowDefinition>
-                <RowDefinition Height="auto"></RowDefinition>
-                <RowDefinition></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
 
-            <!--các element binding từ selected item-->
+            <!-- Input field for unit name -->
             <materialDesign:Card Grid.Row="0" Margin="5">
                 <Grid>
-                    <TextBox Text="{Binding UnitName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Margin="5" materialDesign:HintAssist.Hint="Tên đơn vị đo" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="TextBox_TextChanged" />
+                    <TextBox x:Name="UnitNameTextBox" 
+                             Text="{Binding SelectedUnit.UnitName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
+                             Margin="5" 
+                             materialDesign:HintAssist.Hint="Tên đơn vị đo" 
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                 </Grid>
             </materialDesign:Card>
 
+            <!-- Buttons to add, edit, delete -->
             <materialDesign:Card Grid.Row="1" Margin="5">
                 <WrapPanel>
-                    <Button Command="{Binding AddCommand}" Content="Thêm" Margin="5" Width="100" Click="Button_Click"></Button>
-                    <Button Command="{Binding EditCommand}" Content="Sửa" Margin="5" Width="100" Click="Button_Click_1"></Button>
-                    <Button Command="{Binding DeleteCommand}" Content="Xóa" Margin="5" Width="100" Click="Button_Click_2"></Button>
+                    <Button Content="Thêm" Margin="5" Width="100" Click="AddButton_Click" />
+                    <Button Content="Sửa" Margin="5" Width="100" Click="EditButton_Click" />
+                    <Button Content="Xóa" Margin="5" Width="100" Click="DeleteButton_Click" />
                 </WrapPanel>
             </materialDesign:Card>
 
+            <!-- List of units -->
             <materialDesign:Card Grid.Row="2" Margin="5" VerticalAlignment="Stretch">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <ListView ItemsSource="{Binding List, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedItem}">
+                    <ListView x:Name="UnitListView" 
+                              ItemsSource="{Binding UnitList}" 
+                              SelectedItem="{Binding SelectedUnit}" 
+                              SelectionChanged="UnitListView_SelectionChanged">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="Id" DisplayMemberBinding="{Binding UnitId}"></GridViewColumn>
-                                <GridViewColumn Header="Tên đơn vị đo" DisplayMemberBinding="{Binding UnitName}"></GridViewColumn>
+                                <GridViewColumn Header="Id" DisplayMemberBinding="{Binding UnitId}" />
+                                <GridViewColumn Header="Tên đơn vị đo" DisplayMemberBinding="{Binding UnitName}" />
                             </GridView>
                         </ListView.View>
                     </ListView>
                 </ScrollViewer>
             </materialDesign:Card>
         </Grid>
-
     </Grid>
 </Window>

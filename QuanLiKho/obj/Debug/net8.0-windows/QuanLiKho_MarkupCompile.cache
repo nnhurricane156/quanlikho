@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\ADMIN\Downloads\QuanLiKho\QuanLiKho\QuanLiKho\obj\Debug\net8.0-windows\
+D:\quanlikho\QuanLiKho\obj\Debug\net8.0-windows\
 QuanLiKho
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-C:\Users\ADMIN\Downloads\QuanLiKho\QuanLiKho\QuanLiKho\App.xaml
-101564586173
+D:\quanlikho\QuanLiKho\App.xaml
+111370397401
 
-13-2010246800
-239-507905742
-ControlBar\ControlBarUC.xaml;CustomerWindow.xaml;InputWindow.xaml;LoginWindow.xaml;MainWindow.xaml;ObjectWindow.xaml;OutWindow.xaml;SuplierWindow.xaml;UnitWindow.xaml;UserWindow.xaml;
+14179726112
+239-1430945415
+ControlBar\ControlBarUC.xaml;CustomerWindow.xaml;InputWindow.xaml;LoginWindow.xaml;MainWindow.xaml;ObjectWindow.xaml;OutWindow.xaml;SuplierWindow.xaml;SupplierForm.xaml;UnitWindow.xaml;UserWindow.xaml;
 
 False
 

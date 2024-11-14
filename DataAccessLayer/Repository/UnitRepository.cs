@@ -19,6 +19,10 @@ namespace DataAccessLayer.Repository
 		{
 			return UnitDAO.Instance.GetById(UnitId);
 		}
+		public Unit GetByName(string Name)
+		{
+			return UnitDAO.Instance.GetByName(Name);
+		}
 
 		public void AddUnit(Unit Unit)
 		{

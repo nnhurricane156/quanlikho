@@ -5028,24 +5028,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ADMIN\\.nuget\\packages\\": {},
-    "E:\\VisualStudio\\Tools\\NuGetPackages": {}
+    "C:\\Users\\MINH HUE\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ADMIN\\Downloads\\QuanLiKho\\QuanLiKho\\BusinessObject\\BusinessObject.csproj",
+      "projectUniqueName": "D:\\quanlikho\\BusinessObject\\BusinessObject.csproj",
       "projectName": "BusinessObject",
-      "projectPath": "C:\\Users\\ADMIN\\Downloads\\QuanLiKho\\QuanLiKho\\BusinessObject\\BusinessObject.csproj",
-      "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ADMIN\\Downloads\\QuanLiKho\\QuanLiKho\\BusinessObject\\obj\\",
+      "projectPath": "D:\\quanlikho\\BusinessObject\\BusinessObject.csproj",
+      "packagesPath": "C:\\Users\\MINH HUE\\.nuget\\packages\\",
+      "outputPath": "D:\\quanlikho\\BusinessObject\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "E:\\VisualStudio\\Tools\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\MINH HUE\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5053,6 +5048,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -5117,7 +5113,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

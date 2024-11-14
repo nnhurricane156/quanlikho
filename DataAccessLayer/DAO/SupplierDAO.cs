@@ -45,6 +45,16 @@ namespace DataAccessLayer.DAO
 			}
 		}
 
+		public Supplier GetByName(string name)
+		{
+				var supplier = _context.Suppliers.FirstOrDefault(s => s.SupplierName == name);
+			if (supplier == null)
+			{
+				return null;
+			}
+			return supplier;
+		}
+
 		public void Add(Supplier item)
 		{
 			_context.Suppliers.Add(item);
@@ -57,19 +67,30 @@ namespace DataAccessLayer.DAO
 			_context.SaveChanges();
 		}
 
-		public void Delete(int id)
-		{
-			var item = _context.Suppliers.Find(id);
-			if (item != null && item.SupplierName.Equals("(no supplier)"))
-			{
-				return;
-			}
-			if (item != null)
-			{
-				item.SupplierName = "(no supplier)";
-				_context.Suppliers.Update(item);
-				_context.SaveChanges();
-			}
-		}
-	}
+        public void Delete(int supplierId)
+        {
+            var supplier = _context.Suppliers.Find(supplierId);
+            if (supplier != null)
+            {
+                var relatedObjects = _context.Objectsses.Where(o => o.SupplierId == supplierId).ToList();
+
+                foreach (var obj in relatedObjects)
+                {
+                    var relatedInputInfos = _context.InputInfos.Where(i => i.ObjectId == obj.ObjectId).ToList();
+
+                    foreach (var inputInfo in relatedInputInfos)
+                    {
+                        var relatedOutputInfos = _context.OutputInfos.Where(o => o.InputInfoId == inputInfo.InputInfoId).ToList();
+                        _context.OutputInfos.RemoveRange(relatedOutputInfos);
+                    }
+
+                    _context.InputInfos.RemoveRange(relatedInputInfos);
+                }
+                _context.Objectsses.RemoveRange(relatedObjects);
+                _context.Suppliers.Remove(supplier);
+
+                _context.SaveChanges();
+            }
+        }
+    }
 }

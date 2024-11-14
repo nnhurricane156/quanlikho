@@ -5049,24 +5049,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ADMIN\\.nuget\\packages\\": {},
-    "E:\\VisualStudio\\Tools\\NuGetPackages": {}
+    "C:\\Users\\MINH HUE\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ADMIN\\Downloads\\QuanLiKho\\QuanLiKho\\DataAccessLayer\\DataAccessLayer.csproj",
+      "projectUniqueName": "D:\\quanlikho\\DataAccessLayer\\DataAccessLayer.csproj",
       "projectName": "DataAccessLayer",
-      "projectPath": "C:\\Users\\ADMIN\\Downloads\\QuanLiKho\\QuanLiKho\\DataAccessLayer\\DataAccessLayer.csproj",
-      "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ADMIN\\Downloads\\QuanLiKho\\QuanLiKho\\DataAccessLayer\\obj\\",
+      "projectPath": "D:\\quanlikho\\DataAccessLayer\\DataAccessLayer.csproj",
+      "packagesPath": "C:\\Users\\MINH HUE\\.nuget\\packages\\",
+      "outputPath": "D:\\quanlikho\\DataAccessLayer\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "E:\\VisualStudio\\Tools\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\MINH HUE\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5074,14 +5069,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\ADMIN\\Downloads\\QuanLiKho\\QuanLiKho\\BusinessObject\\BusinessObject.csproj": {
-              "projectPath": "C:\\Users\\ADMIN\\Downloads\\QuanLiKho\\QuanLiKho\\BusinessObject\\BusinessObject.csproj"
+            "D:\\quanlikho\\BusinessObject\\BusinessObject.csproj": {
+              "projectPath": "D:\\quanlikho\\BusinessObject\\BusinessObject.csproj"
             }
           }
         }
@@ -5142,7 +5138,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -11,6 +11,7 @@ namespace DataAccessLayer.Repository
 	{
 		IEnumerable<Supplier> GetAllSuppliers();
 		Supplier GetSupplierById(int supplierId);
+		Supplier GetByName(string name);
 		void AddSupplier(Supplier supplier);
 		void UpdateSupplier(Supplier supplier);
 		void DeleteSupplier(int supplierId);
