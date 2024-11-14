@@ -699,3 +699,4 @@ C:\Users\tuank\Downloads\quanlikho-main\quanlikho-main\QuanLiKho\obj\Debug\net8.
 C:\Users\tuank\Downloads\quanlikho-main\quanlikho-main\QuanLiKho\obj\Debug\net8.0-windows\QuanLiKho.genruntimeconfig.cache
 C:\Users\tuank\Downloads\quanlikho-main\quanlikho-main\QuanLiKho\obj\Debug\net8.0-windows\ref\QuanLiKho.dll
 C:\Users\tuank\Downloads\quanlikho-main\quanlikho-main\QuanLiKho\bin\Debug\net8.0-windows\appsettings.json
+C:\Users\tuank\Downloads\quanlikho-main\quanlikho-main\QuanLiKho\obj\Debug\net8.0-windows\QuanLiKho.sourcelink.json

@@ -21,7 +21,6 @@ WindowStartupLocation="CenterScreen"
         mc:Ignorable="d"
         Title="UserWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
-
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition></RowDefinition>
@@ -73,6 +72,5 @@ WindowStartupLocation="CenterScreen"
                 </ScrollViewer>
             </materialDesign:Card>
         </Grid>
-
     </Grid>
 </Window>

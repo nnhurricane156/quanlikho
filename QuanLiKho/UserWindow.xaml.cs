@@ -26,10 +26,8 @@ namespace QuanLiKho
         private CustomerRepository _customerRepository = new();
         public Customer editedOne { get; set; }
         public UserWindow()
-		{
-			
+		{		
 			InitializeComponent();
-			
 		}
         private void DisableInputs()
         {
