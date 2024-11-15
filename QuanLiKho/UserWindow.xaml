@@ -19,9 +19,8 @@ WindowStyle="None"
 WindowStartupLocation="CenterScreen"
         
         mc:Ignorable="d"
-        Title="UserWindow" Height="450" Width="800">
+        Title="UserWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
-
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition></RowDefinition>
@@ -31,19 +30,16 @@ WindowStartupLocation="CenterScreen"
         </Grid>
 
         <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="159*"/>
-                <ColumnDefinition Width="41*"/>
-            </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
                 <RowDefinition Height="auto"></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
 
             <!--các element binding từ selected item-->
-            <materialDesign:Card Grid.Row="0" Margin="5,5,5,36" Grid.ColumnSpan="2">
-                <WrapPanel Margin="0 0 0 10">
-                    <TextBox x:Name="txtCustomerId" Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}" Margin="5 5 15 5" materialDesign:HintAssist.Hint="Email đăng nhập" Style="{StaticResource MaterialDesignFloatingHintTextBox}" MinWidth="100"/>
+            <materialDesign:Card Grid.Row="0" Margin="5">
+                <WrapPanel x:Name="Input" Margin="0 0 0 10">
+                    <TextBox x:Name="txtCustomerEmail" Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}" Margin="5 5 15 5" materialDesign:HintAssist.Hint="Email đăng nhập" Style="{StaticResource MaterialDesignFloatingHintTextBox}" MinWidth="100"/>
                     <TextBox x:Name="txtCustomerName" Text="{Binding CustomerName, UpdateSourceTrigger=PropertyChanged}" Margin="5 5 15 5" materialDesign:HintAssist.Hint="Tên khách hàng" Style="{StaticResource MaterialDesignFloatingHintTextBox}" MinWidth="100"/>
                     <TextBox x:Name="txtAddress" Text="{Binding Address, UpdateSourceTrigger=PropertyChanged}" Margin="5 5 15 5" materialDesign:HintAssist.Hint="Địa chỉ" Style="{StaticResource MaterialDesignFloatingHintTextBox}" MinWidth="200"/>
                     <TextBox x:Name="txtPhone" Text="{Binding Phone, UpdateSourceTrigger=PropertyChanged}" Margin="5 5 15 5" materialDesign:HintAssist.Hint="Số điện thoại" Style="{StaticResource MaterialDesignFloatingHintTextBox}" MinWidth="100"/>
@@ -51,34 +47,30 @@ WindowStartupLocation="CenterScreen"
                 </WrapPanel>
             </materialDesign:Card>
 
-            <materialDesign:Card Margin="5,68,5,36" Grid.ColumnSpan="2" Grid.RowSpan="2">
+            <materialDesign:Card Grid.Row="1" Margin="5">
                 <WrapPanel>
-                    <Button Command="{Binding AddCommand}" Content="Thêm" Margin="5" Width="100" Click="Button_Click"></Button>
-                    <Button Command="{Binding EditCommand}" Content="Sửa" Margin="5" Width="100" Click="Button_Click_1"></Button>
-                    <Button Command="{Binding DeleteCommand}" Content="Xóa" Margin="5" Width="100" Click="Button_Click_2"></Button>
+                    <Button Command="{Binding AddCommand}" Content="Thêm" Margin="5" Width="100" Click="AddButton"></Button>
+                    <Button Command="{Binding EditCommand}" Content="Sửa" Margin="5" Width="100" Click="UpdateButton"></Button>
+                    <Button Command="{Binding DeleteCommand}" Content="Xóa" Margin="5" Width="100" Click="DeleteButton"></Button>
+                    <Button Command="{Binding AddCommand}" Content="Lưu" Width="100" Click="SaveButton"/>
                 </WrapPanel>
             </materialDesign:Card>
 
-            <materialDesign:Card Grid.Row="1" Margin="5,26,5,5" Grid.ColumnSpan="2" Grid.RowSpan="2">
+            <materialDesign:Card Grid.Row="2" Margin="5" VerticalAlignment="Stretch">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <ListView ItemsSource="{Binding List}" 
-          SelectedItem="{Binding SelectedItem, Mode=TwoWay}" 
-          SelectionChanged="ListView_SelectionChanged" Height="323">
-                        <ListView.View>
-                            <GridView>
-                                <GridViewColumn Header="Id" DisplayMemberBinding="{Binding CustomerId}"></GridViewColumn>
-                                <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Email}"></GridViewColumn>
-                                <GridViewColumn Header="Khách hàng" DisplayMemberBinding="{Binding CustomerName}"></GridViewColumn>
-                                <GridViewColumn Header="Địa chỉ" DisplayMemberBinding="{Binding Address}"></GridViewColumn>
-                                <GridViewColumn Header="Phone" DisplayMemberBinding="{Binding Phone}"></GridViewColumn>
-                                <GridViewColumn Header="Ngày hợp tác" DisplayMemberBinding="{Binding ContractDate}" Width="150"></GridViewColumn>
-                            </GridView>
-                        </ListView.View>
-                    </ListView>
+                    <DataGrid x:Name="CustomerDataGrid" SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}" AutoGenerateColumns="False" HeadersVisibility="Column" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Id" Binding="{Binding CustomerId}" Width="Auto" />
+                            <DataGridTextColumn Header="Tên khách hàng" Binding="{Binding CustomerName}" Width="*" />
+                            <DataGridTextColumn Header="Địa chỉ" Binding="{Binding Address}" Width="*" />
+                            <DataGridTextColumn Header="Điện thoại" Binding="{Binding Phone}" Width="*" />
+                            <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="*" />
+                            <DataGridTextColumn Header="Ngày hợp tác" Binding="{Binding ContractDate, StringFormat='dd/MM/yyyy'}" Width="Auto" />
+                        </DataGrid.Columns>
+                    </DataGrid>
 
                 </ScrollViewer>
             </materialDesign:Card>
         </Grid>
-
     </Grid>
 </Window>

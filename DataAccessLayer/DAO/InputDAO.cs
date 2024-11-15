@@ -61,5 +61,9 @@ namespace DataAccessLayer.DAO
 				_context.SaveChanges();
 			}
 		}
-	}
+        public InputInfo GetByObjectId(int objectId)
+        {
+            return _context.InputInfos.FirstOrDefault(i => i.ObjectId == objectId);
+        }
+    }
 }

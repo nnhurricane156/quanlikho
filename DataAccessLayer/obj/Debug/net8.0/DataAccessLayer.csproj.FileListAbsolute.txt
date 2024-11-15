@@ -32,3 +32,4 @@ C:\Users\ADMIN\Downloads\QuanLiKho\QuanLiKho\DataAccessLayer\obj\Debug\net8.0\re
 C:\Users\ADMIN\Downloads\QuanLiKho\QuanLiKho\DataAccessLayer\obj\Debug\net8.0\DataAccessLayer.pdb
 C:\Users\ADMIN\Downloads\QuanLiKho\QuanLiKho\DataAccessLayer\obj\Debug\net8.0\DataAccessLayer.genruntimeconfig.cache
 C:\Users\ADMIN\Downloads\QuanLiKho\QuanLiKho\DataAccessLayer\obj\Debug\net8.0\ref\DataAccessLayer.dll
+C:\Users\ADMIN\Downloads\QuanLiKho\QuanLiKho\DataAccessLayer\obj\Debug\net8.0\DataAccessLayer.sourcelink.json

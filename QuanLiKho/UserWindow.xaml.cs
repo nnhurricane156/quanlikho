@@ -22,67 +22,126 @@ namespace QuanLiKho
     /// </summary>
     public partial class UserWindow : Window
     {
-		private readonly ICustomerRepository customerRepository;
+        private readonly ICustomerRepository customerRepository;
+        private CustomerRepository _customerRepository = new();
+        public Customer editedOne { get; set; }
+        public UserWindow()
+        {
+            InitializeComponent();
+        }
+        private void DisableInputs()
+        {
+            txtCustomerEmail.IsEnabled = false;
+            txtCustomerName.IsEnabled = false;
+            txtAddress.IsEnabled = false;
+            txtPhone.IsEnabled = false;
+            dateContractDate.IsEnabled = false;
+        }
 
-		public UserWindow()
-		{
-			customerRepository = new CustomerRepository();
-			InitializeComponent();
-			LoadCustomerList();
-		}
+        private void EnableInputs()
+        {
+            txtCustomerEmail.IsEnabled = true;
+            txtCustomerName.IsEnabled = true;
+            txtAddress.IsEnabled = true;
+            txtPhone.IsEnabled = true;
+            dateContractDate.IsEnabled = true;
+        }
+
+        public void ClearInputs()
+        {
+            txtCustomerEmail.Text = string.Empty;
+            txtCustomerName.Text = string.Empty;
+            txtAddress.Text = string.Empty;
+            txtPhone.Text = string.Empty;
+            dateContractDate.SelectedDate = null; // Đặt lại DatePicker về null để xóa ngày
+        }
 
 
-		public void LoadCustomerList()
-		{
-			var list = customerRepository.GetAllCustomers();
-			this.DataContext = new { List = list };
-		}
+        public void ShowNavigate(Customer editOne)
+        {
+            txtCustomerEmail.Text = editOne.Email;
+            txtCustomerName.Text = editOne.CustomerName;
+            txtAddress.Text = editOne.Address;
+            txtPhone.Text = editOne.Phone;
+            dateContractDate.Text = editOne.ContractDate?.ToString("yyyy-MM-dd");
+        }
 
-		private void Window_Loaded(object sender, RoutedEventArgs e)
-		{
-			LoadCustomerList();
-		}
+        public void FillDataGrid(List<Customer> arr)
+        {
+            CustomerDataGrid.ItemsSource = null;
+            CustomerDataGrid.ItemsSource = arr;
+        }
 
-		private void Button_Click(object sender, RoutedEventArgs e)
-		{
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            FillDataGrid(_customerRepository.GetAllCustomers().ToList());
+            DisableInputs();
+        }
+
+
+        private void AddButton(object sender, RoutedEventArgs e)
+        {
+            EnableInputs();
+        }
+
+        private void UpdateButton(object sender, RoutedEventArgs e)
+        {
+            EnableInputs();
+            Customer? editOne = CustomerDataGrid.SelectedItem as Customer;
+            if (editOne == null)
+            {
+                MessageBox.Show("Hãy chọn khách hàng", "Select one", MessageBoxButton.OK, MessageBoxImage.Stop);
+                return;
+            }
+            editedOne = editOne;
+            ShowNavigate(editOne);
 
         }
 
-		private void Button_Click_1(object sender, RoutedEventArgs e)
-		{
+        private void DeleteButton(object sender, RoutedEventArgs e)
+        {
+            Customer? selected = CustomerDataGrid.SelectedItem as Customer;
+            if (selected == null)
+            {
+                MessageBox.Show("Hãy chọn khách hàng", "Select one", MessageBoxButton.OK, MessageBoxImage.Stop);
+                return;
+            }
 
-		}
+            MessageBoxResult answer = MessageBox.Show("Bạn chắc chắn không?", "Confirm?", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (answer == MessageBoxResult.No)
+                return;
+            _customerRepository.DeleteCustomer(selected);
+            FillDataGrid(_customerRepository.GetAllCustomers().ToList());
+        }
 
-		//Delete
-		private void Button_Click_2(object sender, RoutedEventArgs e)
-		{
-			try
-			{
-				if (!string.IsNullOrEmpty(txtCustomerId.Text))
-				{
-					Customer g = customerRepository.GetCustomerById(Int32.Parse(txtCustomerId.Text));
-					customerRepository.DeleteCustomer(g.CustomerId);
-				}
-				else
-				{
-					MessageBox.Show("You must select a Customer!");
-				}
-			}
-			catch (Exception ex)
-			{
+        private void SaveButton(object sender, RoutedEventArgs e)
+        {
+            Customer obj;
+            if (editedOne != null)
+                obj = _customerRepository.GetCustomerById(editedOne.CustomerId);
+            else
+                obj = new Customer();
 
-			}
-			finally
-			{
-				LoadCustomerList();
-			}
-		}
+            obj.Email = txtCustomerEmail.Text;
+            obj.CustomerName = txtCustomerName.Text;
+            obj.Address = txtAddress.Text;
+            obj.Phone = txtPhone.Text;
+            if (dateContractDate.SelectedDate.HasValue)
+                obj.ContractDate = DateOnly.FromDateTime(dateContractDate.SelectedDate.Value);
 
-		private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-		{
-			
-		}
+            if (editedOne == null)
+                _customerRepository.AddCustomer(obj);
+            else
+            {
+                _customerRepository.UpdateCustomer(obj);
+                editedOne = null;
+            }
+            FillDataGrid(_customerRepository.GetAllCustomers().ToList());
+            DisableInputs();
+            ClearInputs();
+        }
 
-		
-	}
+
+
+    }
 }

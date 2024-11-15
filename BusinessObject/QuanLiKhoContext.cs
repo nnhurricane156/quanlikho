@@ -55,7 +55,7 @@ public partial class QuanLiKhoContext : DbContext
 
             entity.HasOne(d => d.Object).WithMany(p => p.InputInfos)
                 .HasForeignKey(d => d.ObjectId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
+                .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("FK__InputInfo__Objec__5165187F");
         });
 
@@ -86,12 +86,12 @@ public partial class QuanLiKhoContext : DbContext
 
             entity.HasOne(d => d.Customer).WithMany(p => p.OutputInfos)
                 .HasForeignKey(d => d.CustomerId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
+                .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("FK__OutputInf__Custo__5629CD9C");
 
             entity.HasOne(d => d.InputInfo).WithMany(p => p.OutputInfos)
                 .HasForeignKey(d => d.InputInfoId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
+                .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("FK__OutputInf__Input__5812160E");
 
             entity.HasOne(d => d.Object).WithMany(p => p.OutputInfos)

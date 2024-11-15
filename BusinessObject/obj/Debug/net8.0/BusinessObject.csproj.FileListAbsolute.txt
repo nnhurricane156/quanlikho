@@ -26,3 +26,4 @@ C:\Users\ADMIN\Downloads\QuanLiKho\QuanLiKho\BusinessObject\obj\Debug\net8.0\ref
 C:\Users\ADMIN\Downloads\QuanLiKho\QuanLiKho\BusinessObject\obj\Debug\net8.0\BusinessObject.pdb
 C:\Users\ADMIN\Downloads\QuanLiKho\QuanLiKho\BusinessObject\obj\Debug\net8.0\BusinessObject.genruntimeconfig.cache
 C:\Users\ADMIN\Downloads\QuanLiKho\QuanLiKho\BusinessObject\obj\Debug\net8.0\ref\BusinessObject.dll
+C:\Users\ADMIN\Downloads\QuanLiKho\QuanLiKho\BusinessObject\obj\Debug\net8.0\BusinessObject.sourcelink.json

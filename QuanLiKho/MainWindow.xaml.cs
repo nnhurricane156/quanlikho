@@ -30,7 +30,7 @@ namespace QuanLiKho
 
 		private void Button_Click_1(object sender, RoutedEventArgs e)
 		{
-			OutWindow outWindow = new OutWindow();
+			OutputWindow outWindow = new OutputWindow();
 			outWindow.Show();
 
 		}

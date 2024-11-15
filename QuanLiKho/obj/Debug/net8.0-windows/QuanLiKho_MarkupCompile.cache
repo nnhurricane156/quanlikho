@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\ADMIN\Downloads\QuanLiKho\QuanLiKho\QuanLiKho\App.xaml
-111492133993
+121297945221
 
-145947147
+15-2099047237
 239-507905742
-ControlBar\ControlBarUC.xaml;CustomerWindow.xaml;InputWindow.xaml;Invoice.xaml;LoginWindow.xaml;MainWindow.xaml;ObjectWindow.xaml;OutWindow.xaml;SuplierWindow.xaml;UnitWindow.xaml;UserWindow.xaml;
+ControlBar\ControlBarUC.xaml;CustomerWindow.xaml;InputWindow.xaml;Invoice.xaml;LoginWindow.xaml;MainWindow.xaml;ObjectWindow.xaml;OutWindow.xaml;SuplierWindow.xaml;SupplierForm.xaml;UnitWindow.xaml;UserWindow.xaml;
 
 False
 

@@ -66,6 +66,9 @@
     <Page Update="SuplierWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="SupplierForm.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="UnitWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
