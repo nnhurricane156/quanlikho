@@ -20,6 +20,11 @@ namespace DataAccessLayer.Repository
 			return SupplierDAO.Instance.GetById(SupplierId);
 		}
 
+		public Supplier GetByName(string name)
+		{
+			return SupplierDAO.Instance.GetByName(name);	
+		}
+
 		public void AddSupplier(Supplier Supplier)
 		{
 			SupplierDAO.Instance.Add(Supplier);
